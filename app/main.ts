@@ -6,6 +6,7 @@ import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 import { routes, navigatableComponents } from "./app.routing";
+import { StoriesService } from "./shared/stories.service";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -18,6 +19,9 @@ import { routes, navigatableComponents } from "./app.routing";
         NativeScriptRouterModule,
         NativeScriptRouterModule.forRoot(routes)
     ],
+    providers: [
+        StoriesService
+    ]
 })
 class AppComponentModule {}
 

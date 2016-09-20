@@ -1,0 +1,7 @@
+<GridLayout>
+    <ListView [items]="stories" class="small-spacing">
+        <template let-item="item">
+            <Label [text]="item.title" class="medium-spacing" (tap)="goToStory(item.id)"></Label>
+        </template>
+    </ListView>
+</GridLayout>
