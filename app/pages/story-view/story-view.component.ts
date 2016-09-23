@@ -10,6 +10,8 @@ import { StoriesService } from "../../shared/stories.service";
 export class StoryViewComponent implements OnInit {
 
     public story;
+    // public icon = String.fromCharCode(&#x;)
+    public icon = String.fromCharCode(parseInt('f004',16))
 
     constructor(
         private route: ActivatedRoute,
@@ -23,4 +25,12 @@ export class StoryViewComponent implements OnInit {
             this.story = this._storiesService.getStory(id);
         });
     }
+
+    public onHeartClick(storyId: number): void {
+        this._storiesService.toggleFavoriteState(storyId);
+    }
+
+    public getHeartColor(storyId: number): string {
+        return this._storiesService.isFavorite(storyId) ? 'red' : 'grey';
+    }    
 }

@@ -1,6 +1,23 @@
 <StackLayout>
 
-    <Label [text]="story.title" class="medium-spacing"></Label>
-    <Label [text]="story.text" class="medium-spacing"></Label>
+    <GridLayout rows="auto" columns="*,*,*,*,*,*,*,*">
+        <Label [text]="story.title" 
+                class="medium-spacing" 
+                row="0" 
+                col="0" 
+                colSpan="7" 
+                horizontalAlignment="left">
+        </Label>
+        <Image src="~/images/heart-{{getHeartColor(story.id)}}.png" 
+                stretch="none" 
+                verticalAlignment="center" 
+                row="0" 
+                col="7"
+                (tap)="onHeartClick(story.id)" >
+        </Image>
+    </GridLayout>
+
+    <Label [text]="story.text" class="medium-spacing" horizontalAlignment="left"></Label>
+
 
 </StackLayout>

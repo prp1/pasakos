@@ -1,5 +1,5 @@
 <GridLayout>
-    <ListView [items]="categories" class="small-spacing">
+    <ListView [items]="categories" class="small-spacing" [class.visible]="isLoaded">
         <template let-item="item">
             <Label [text]="item.title" class="medium-spacing" (tap)="goToStoriesByCategory(item.id)"></Label>
         </template>

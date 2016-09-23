@@ -10,6 +10,7 @@ import { StoriesService } from "../../shared/stories.service";
 export class CategoriesComponent implements OnInit {
 
     public categories = [];
+    public isLoaded: boolean = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -19,6 +20,7 @@ export class CategoriesComponent implements OnInit {
 
     public ngOnInit() {
         this.categories = this._storiesService.getCategories();
+        this.isLoaded = true;
     }
 
     public goToStoriesByCategory(categoryId) {

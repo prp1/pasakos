@@ -1,7 +1,24 @@
 <GridLayout>
-    <ListView [items]="stories" class="small-spacing">
+    <ListView [items]="stories" class="small-spacing" [class.visible]="isLoaded">
         <template let-item="item">
-            <Label [text]="item.title" class="medium-spacing" (tap)="goToStory(item.id)"></Label>
+            <GridLayout rows="auto" columns="*,*,*,*,*,*,*,*">
+                <Label [text]="item.title" 
+                        class="medium-spacing" 
+                        (tap)="goToStory(item.id)" 
+                        row="0" 
+                        col="0" 
+                        colSpan="7" 
+                        horizontalAlignment="left">
+                </Label>
+                <Image src="~/images/heart-{{getHeartColor(item.id)}}.png" 
+                        cssClass="heart" 
+                        stretch="none" 
+                        verticalAlignment="center" 
+                        row="0" 
+                        col="7"
+                        (tap)="onHeartClick(item.id)" >
+                </Image>
+            </GridLayout>
         </template>
     </ListView>
 </GridLayout>
