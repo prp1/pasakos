@@ -1,9 +1,15 @@
-﻿button, label, stack-layout {
-    horizontal-align: center;    
+﻿ActionBar {
+    background-color:  #305b7d;
+    color: white;
+}
+
+button, label, stack-layout {
+    horizontal-align: center;
 }
 
 button {
-    font-size: 36;
+    font-size: 30;
+    background-color: #bfdef3;
 }
 
 .title {

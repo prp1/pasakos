@@ -1,5 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Page } from 'ui/page';
+import { Color } from 'color';
 
 import { StoriesService } from "../../shared/stories.service";
 import { Story } from "../../shared/stories.interfaces";
@@ -16,7 +18,8 @@ export class StoriesListComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private _storiesService: StoriesService
+        private _storiesService: StoriesService,
+        private _page: Page
     ) { }
 
     ngOnInit() {
@@ -25,6 +28,7 @@ export class StoriesListComponent implements OnInit {
             this.stories = this._storiesService.getStories(categoryId);
             this.isLoaded = true;
         });
+        this._page.backgroundColor = new Color("#beddf2");
     }
 
     public goToStory(id: number): void {
