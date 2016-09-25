@@ -68,3 +68,14 @@ ListView {
 .aaa {
     background: red;
 }
+
+.main-grid {
+    border-width: 1;
+    border-color: red;
+
+}
+
+.StackLayout {
+    border-width: 1;
+    border-color: green;
+}
