@@ -109,3 +109,7 @@ Image {
 .btn-stop {
     background: #ccc
 }
+
+.song-action-btn {
+    margin-top: 8;
+}

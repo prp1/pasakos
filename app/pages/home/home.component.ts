@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     public ngOnInit() {
         // this._page.actionBarHidden = true;
         this._page.backgroundColor = new Color("#3080c9");
-        // this._page.backgroundImage = "~/images/bg2.png";        
+        this._page.backgroundImage = "~/images/sun3.png";        
     }
 
 }

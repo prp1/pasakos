@@ -3,7 +3,8 @@
         <StackLayout [class.odd]="odd" [class.even]="even" orientation="horizontal">
             <Image src="~/images/{{getActionImg(item)}}.png" 
                    stretch="none" 
-                   (tap)="onActionClick(item)">
+                   (tap)="onActionClick(item)"
+                   class="song-action-btn">
             </Image>
             <Label [text]="item.title" 
                     class="medium-spacing">
