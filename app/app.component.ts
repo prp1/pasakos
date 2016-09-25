@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
     selector: "my-app",
@@ -7,17 +8,13 @@ import {Component} from "@angular/core";
 export class AppComponent {
     public counter: number = 16;
 
-    public get message(): string {
-        if (this.counter > 0) {
-            return this.counter + " taps left";
-        } else {
-            return "Hoorraaay! \nYou are ready to start building!";
-        }
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router
+    ) {}
+
+    public onActionBarClick() {
+        this.router.navigate(['/']);
     }
     
-    public onTap() {
-        this.counter--;
-    }
-
-    public secondMsg: string = 'Pasaku appsas'
 }

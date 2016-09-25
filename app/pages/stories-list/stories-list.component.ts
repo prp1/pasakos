@@ -20,7 +20,7 @@ export class StoriesListComponent implements OnInit {
         private router: Router,
         private _storiesService: StoriesService,
         private _page: Page
-    ) { }
+    ) {}
 
     ngOnInit() {
         this.route.params.forEach((params: Params) => {
