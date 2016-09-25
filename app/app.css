@@ -43,7 +43,7 @@ TextField {
 /****/
 
 ListView {
-  opacity: 0;
+  /*opacity: 0;*/
 }
 .visible {
   animation-name: show;
@@ -65,17 +65,47 @@ ListView {
     margin-top: 5;
 }*/
 
-.aaa {
-    background: red;
-}
 
+/*
 .main-grid {
     border-width: 1;
     border-color: red;
 
 }
 
-.StackLayout {
+StackLayout {
     border-width: 1;
     border-color: green;
+}
+
+AbsoluteLayout {
+    border-width: 1;
+    border-color: yellow;
+}
+
+Image {
+    border-width: 1;
+    border-color: blue;
+}
+*/
+
+.audio-tracks-list-container {
+    opacity: 0;
+    display: none;
+}
+
+.audio-tracks-list-container.visible {
+    opacity: 1;
+    display: block;
+  /*animation-name: showAudioTrackList;
+  animation-duration: 1s;*/
+}
+
+@keyframes showAudioTrackList {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.btn-stop {
+    background: #ccc
 }

@@ -1,5 +1,9 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "editor.detectIndentation": false,
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "files.exclude": {
+        "**/*.js": true,
+        "**/*.js.map": true
+    }
 }
