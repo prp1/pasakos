@@ -5,6 +5,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
+import { BottomBarComponent } from "./components/bottom-bar/bottom-bar.component";
 import { routes, navigatableComponents } from "./app.routing";
 import { StoriesService } from "./shared/stories.service";
 import { SongsService } from "./pages/songs/songs.service";
@@ -13,6 +14,7 @@ import { SongsService } from "./pages/songs/songs.service";
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
+        BottomBarComponent,
         ...navigatableComponents,
     ],
     imports: [

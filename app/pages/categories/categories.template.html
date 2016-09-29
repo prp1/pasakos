@@ -4,37 +4,5 @@
             <Label [text]="item.title" class="medium-spacing" (tap)="goToStoriesByCategory(item.id)"></Label>
         </template>
     </ListView>
-    <GridLayout row="1" rows="*" columns="*,*,*">
-        <!--<Label text="aa" backgroundImage="~/images/heart-grey.png" row="0" col="0" horizontalAlignment="stretch"></Label>-->
-        <!--<Button text="Sign in" row="0" col="1" horizontalAlignment="stretch"></Button>-->
-        <!--<Label text="b" backgroundColor="green" row="0" col="1" horizontalAlignment="stretch"></Label>-->
-        <StackLayout horizontalAlignment="stretch" row="0" col="0" backgroundColor="white">
-                <Image src="~/images/note.png"
-                        stretch="none"
-                        verticalAlignment="center"
-                        horizontalAlignment="center"
-                        marginTop="10"
-                        (tap)="onHeartClick(item.id)" >
-                </Image>
-        </StackLayout>
-        <StackLayout horizontalAlignment="stretch" row="0" col="1" backgroundColor="white">
-                <Image src="~/images/list.png"
-                        stretch="none"
-                        verticalAlignment="center"
-                        horizontalAlignment="center"
-                        marginTop="10"
-                        (tap)="onHeartClick(item.id)" >
-                </Image>
-        </StackLayout>
-        <StackLayout horizontalAlignment="stretch" row="0" col="2" backgroundColor="white">
-                <Image src="~/images/heart-grey.png"
-                        stretch="none"
-                        verticalAlignment="center"
-                        horizontalAlignment="center"
-                        marginTop="15"
-                        (tap)="onHeartClick(item.id)" >
-                </Image>
-        </StackLayout>
-        <!--<Label text="c" backgroundColor="yellow" row="0" col="2" horizontalAlignment="stretch"></Label>-->
-    </GridLayout>
+    <pas-bottom-bar></pas-bottom-bar>
 </GridLayout>

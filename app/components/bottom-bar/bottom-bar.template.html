@@ -1,0 +1,29 @@
+<GridLayout row="1" rows="*" columns="*,*,*">
+    <StackLayout horizontalAlignment="stretch" row="0" col="0" backgroundColor="white">
+        <Image src="~/images/note.png"
+                stretch="none"
+                verticalAlignment="center"
+                horizontalAlignment="center"
+                marginTop="10"
+                (tap)="onNoteClick()" >
+        </Image>
+    </StackLayout>
+    <StackLayout horizontalAlignment="stretch" row="0" col="1" backgroundColor="white">
+        <Image src="~/images/list.png"
+                stretch="none"
+                verticalAlignment="center"
+                horizontalAlignment="center"
+                marginTop="10"
+                (tap)="onListClick()" >
+        </Image>
+    </StackLayout>
+    <StackLayout horizontalAlignment="stretch" row="0" col="2" backgroundColor="white">
+        <Image src="~/images/heart-grey.png"
+                stretch="none"
+                verticalAlignment="center"
+                horizontalAlignment="center"
+                marginTop="13"
+                (tap)="onHeartClick()" >
+        </Image>
+    </StackLayout>
+</GridLayout>
