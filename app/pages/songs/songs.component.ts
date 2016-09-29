@@ -22,7 +22,7 @@ export class SongsComponent implements OnInit {
     ngOnInit() {
         this.songs = this._songsService.getSongs();
         this.isLoaded = true;
-        this._page.backgroundColor = new Color("#beddf2");
+        // this._page.backgroundColor = new Color("#beddf2");
     }
 
     public onActionClick(song: Song): void {

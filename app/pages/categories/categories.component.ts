@@ -24,7 +24,7 @@ export class CategoriesComponent implements OnInit {
     public ngOnInit() {
         this.categories = this._storiesService.getCategories();
         this.isLoaded = true;
-        this._page.backgroundColor = new Color("#beddf2");
+        // this._page.backgroundColor = new Color("#beddf2");
     }
 
     public goToStoriesByCategory(categoryId) {

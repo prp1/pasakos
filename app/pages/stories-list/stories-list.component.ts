@@ -28,7 +28,7 @@ export class StoriesListComponent implements OnInit {
             this.stories = this._storiesService.getStories(categoryId);
             this.isLoaded = true;
         });
-        this._page.backgroundColor = new Color("#beddf2");
+        // this._page.backgroundColor = new Color("#beddf2");
     }
 
     public goToStory(id: number): void {
