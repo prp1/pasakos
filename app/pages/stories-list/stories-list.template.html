@@ -10,11 +10,11 @@
                         colSpan="7" 
                         horizontalAlignment="left">
                 </Label>
-                <Image src="~/images/heart-{{getHeartColor(item.id)}}.png" 
-                        cssClass="heart" 
-                        stretch="none" 
-                        verticalAlignment="center" 
-                        row="0" 
+                <Image src="~/images/heart-{{getHeartColor(item.id)}}.png"
+                        cssClass="heart"
+                        stretch="none"
+                        verticalAlignment="center"
+                        row="0"
                         col="7"
                         (tap)="onHeartClick(item.id)" >
                 </Image>
