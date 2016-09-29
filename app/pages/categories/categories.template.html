@@ -1,7 +1,7 @@
-<pas-layout-with-bottom-bar>
+<pas-layout>
     <ListView [items]="categories" class="small-spacing" [class.visible]="isLoaded" row="0">
         <template let-item="item">
             <Label [text]="item.title" class="medium-spacing" (tap)="goToStoriesByCategory(item.id)"></Label>
         </template>
     </ListView>
-</pas-layout-with-bottom-bar>
+</pas-layout>

@@ -1,5 +1,5 @@
-<!--<GridLayout row="1" rows="*" columns="*,*,*">
-    <StackLayout horizontalAlignment="stretch" row="0" col="0" backgroundColor="white">
+<GridLayout  rows="*" columns="*,*,*">
+    <StackLayout horizontalAlignment="stretch" row="1" col="0" backgroundColor="#beddf2">
         <Image src="~/images/note.png"
                 stretch="none"
                 verticalAlignment="center"
@@ -8,7 +8,7 @@
                 (tap)="onNoteClick()" >
         </Image>
     </StackLayout>
-    <StackLayout horizontalAlignment="stretch" row="0" col="1" backgroundColor="white">
+    <StackLayout horizontalAlignment="stretch" row="0" col="1" backgroundColor="#beddf2">
         <Image src="~/images/list.png"
                 stretch="none"
                 verticalAlignment="center"
@@ -17,7 +17,7 @@
                 (tap)="onListClick()" >
         </Image>
     </StackLayout>
-    <StackLayout horizontalAlignment="stretch" row="0" col="2" backgroundColor="white">
+    <StackLayout horizontalAlignment="stretch" row="0" col="2" backgroundColor="#beddf2">
         <Image src="~/images/heart-grey.png"
                 stretch="none"
                 verticalAlignment="center"
@@ -26,39 +26,4 @@
                 (tap)="onHeartClick()" >
         </Image>
     </StackLayout>
-</GridLayout>-->
-
-<GridLayout columns="*" rows="*, 50" class="main-grid">
-    <StackLayout row="0">
-        <ng-content></ng-content>
-    </StackLayout>
-    <GridLayout row="1" rows="*" columns="*,*,*">
-        <StackLayout horizontalAlignment="stretch" row="1" col="0" backgroundColor="#beddf2">
-            <Image src="~/images/note.png"
-                    stretch="none"
-                    verticalAlignment="center"
-                    horizontalAlignment="center"
-                    marginTop="10"
-                    (tap)="onNoteClick()" >
-            </Image>
-        </StackLayout>
-        <StackLayout horizontalAlignment="stretch" row="0" col="1" backgroundColor="#beddf2">
-            <Image src="~/images/list.png"
-                    stretch="none"
-                    verticalAlignment="center"
-                    horizontalAlignment="center"
-                    marginTop="10"
-                    (tap)="onListClick()" >
-            </Image>
-        </StackLayout>
-        <StackLayout horizontalAlignment="stretch" row="0" col="2" backgroundColor="#beddf2">
-            <Image src="~/images/heart-grey.png"
-                    stretch="none"
-                    verticalAlignment="center"
-                    horizontalAlignment="center"
-                    marginTop="13"
-                    (tap)="onHeartClick()" >
-            </Image>
-        </StackLayout>
-    </GridLayout>
 </GridLayout>

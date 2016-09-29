@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Router } from '@angular/router';
 
 @Component({
-    selector: "pas-layout-with-bottom-bar",
+    selector: "pas-bottom-bar",
     templateUrl: "components/bottom-bar/bottom-bar.template.html",
 })
 export class BottomBarComponent {

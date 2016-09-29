@@ -1,4 +1,4 @@
-<pas-layout-with-bottom-bar>
+<pas-layout>
     <StackLayout>
 
         <GridLayout rows="auto" columns="*,*,*,*,*,*,*,*">
@@ -10,7 +10,7 @@
                     horizontalAlignment="left">
             </Label>
             <Image src="~/images/heart-{{getHeartColor(story.id)}}.png"
-                    stretch="none" 
+                    stretch="none"
                     verticalAlignment="center"
                     row="0"
                     col="7"
@@ -21,4 +21,4 @@
         <TextView text="{{story.text}}" editable="false"></TextView>
 
     </StackLayout>
-</pas-layout-with-bottom-bar>
+</pas-layout>
