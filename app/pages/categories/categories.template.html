@@ -1,8 +1,7 @@
-<GridLayout columns="*" rows="*, 50" class="main-grid">
+<pas-layout-with-bottom-bar>
     <ListView [items]="categories" class="small-spacing" [class.visible]="isLoaded" row="0">
         <template let-item="item">
             <Label [text]="item.title" class="medium-spacing" (tap)="goToStoriesByCategory(item.id)"></Label>
         </template>
     </ListView>
-    <pas-bottom-bar></pas-bottom-bar>
-</GridLayout>
+</pas-layout-with-bottom-bar>

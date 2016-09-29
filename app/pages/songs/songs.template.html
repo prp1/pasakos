@@ -1,14 +1,16 @@
-<ListView [items]="songs">
-    <template let-item="item" let-i="index" let-odd="odd" let-even="even">
-        <StackLayout [class.odd]="odd" [class.even]="even" orientation="horizontal">
-            <Image src="~/images/{{getActionImg(item)}}.png" 
-                   stretch="none" 
-                   (tap)="onActionClick(item)"
-                   class="song-action-btn">
-            </Image>
-            <Label [text]="item.title" 
-                    class="medium-spacing">
-            </Label>
-        </StackLayout>
-    </template>
-</ListView>
+<pas-layout-with-bottom-bar>
+    <ListView [items]="songs">
+        <template let-item="item" let-i="index" let-odd="odd" let-even="even">
+            <StackLayout [class.odd]="odd" [class.even]="even" orientation="horizontal">
+                <Image src="~/images/{{getActionImg(item)}}.png"
+                    stretch="none"
+                    (tap)="onActionClick(item)"
+                    class="song-action-btn">
+                </Image>
+                <Label [text]="item.title"
+                        class="medium-spacing">
+                </Label>
+            </StackLayout>
+        </template>
+    </ListView>
+</pas-layout-with-bottom-bar>
