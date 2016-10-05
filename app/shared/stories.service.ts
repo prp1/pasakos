@@ -1,14 +1,11 @@
-import { Injectable } from "@angular/core";
-// import "rxjs/add/operator/map";
+import { Injectable } from '@angular/core';
 import { stories } from '../data/stories';
 import { Story } from './stories.interfaces';
 
 @Injectable()
 export class StoriesService {
 
-    private _favoriteStoriesIds: number[] = [
-        1,
-    ];
+    private _favoriteStoriesIds: number[] = [];
 
     public getStory(storyId: number): Story {
         let story;

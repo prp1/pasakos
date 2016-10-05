@@ -1,26 +1,23 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-
-import { StoriesService } from "../../shared/stories.service";
+import { StoriesService } from '../../shared/stories.service';
+import { Story } from '../../shared/stories.interfaces';
 
 @Component({
-    selector: "pas-story-view",
-    templateUrl: "pages/story-view/story-view.template.html",
+    templateUrl: 'pages/story-view/story-view.template.html',
 })
 export class StoryViewComponent implements OnInit {
 
-    public story;
-    // public icon = String.fromCharCode(&#x;)
-    public icon = String.fromCharCode(parseInt('f004',16))
+    public story: Story;
 
     constructor(
-        private route: ActivatedRoute,
-        private router: Router,
+        private _route: ActivatedRoute,
+        private _router: Router,
         private _storiesService: StoriesService
-    ) { }
+    ) {}
 
-    ngOnInit() {
-        this.route.params.forEach((params: Params) => {
+    public ngOnInit(): void {
+        this._route.params.forEach((params: Params) => {
             let id = +params['id'];
             this.story = this._storiesService.getStory(id);
         });
@@ -32,5 +29,6 @@ export class StoryViewComponent implements OnInit {
 
     public getHeartColor(storyId: number): string {
         return this._storiesService.isFavorite(storyId) ? 'red' : 'grey';
-    }    
+    }
+
 }
