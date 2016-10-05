@@ -10,6 +10,7 @@ import { LayoutComponent } from "./components/layout/layout.component";
 import { routes, navigatableComponents } from "./app.routing";
 import { StoriesService } from "./shared/stories.service";
 import { SongsService } from "./pages/songs/songs.service";
+import { CategoriesService } from "./pages/categories/categories.service";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -25,10 +26,13 @@ import { SongsService } from "./pages/songs/songs.service";
         NativeScriptRouterModule.forRoot(routes)
     ],
     providers: [
+        CategoriesService,
         StoriesService,
         SongsService,
     ]
 })
-class AppComponentModule {}
+class AppComponentModule {
+
+}
 
 platformNativeScriptDynamic().bootstrapModule(AppComponentModule);

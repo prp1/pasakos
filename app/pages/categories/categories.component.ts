@@ -1,12 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Page } from 'ui/page';
-import { Color } from 'color';
+import { Router, Params } from '@angular/router';
 
-import { StoriesService } from "../../shared/stories.service";
+import { CategoriesService } from "./categories.service";
 
 @Component({
-    selector: "pas-categories",
     templateUrl: "pages/categories/categories.template.html",
 })
 export class CategoriesComponent implements OnInit {
@@ -15,19 +12,17 @@ export class CategoriesComponent implements OnInit {
     public isLoaded: boolean = false;
 
     constructor(
-        private route: ActivatedRoute,
-        private router: Router,
-        private _storiesService: StoriesService,
-        private _page: Page
+        private _router: Router,
+        private _categoriesService: CategoriesService
     ) { }
 
     public ngOnInit() {
-        this.categories = this._storiesService.getCategories();
+        this.categories = this._categoriesService.getCategories();
         this.isLoaded = true;
-        // this._page.backgroundColor = new Color("#beddf2");
     }
 
-    public goToStoriesByCategory(categoryId) {
-        this.router.navigate(['/storieslist', categoryId]);
+    public goToStoriesByCategory(categoryId: number): void {
+        this._router.navigate(['/storieslist', categoryId]);
     }
+
 }

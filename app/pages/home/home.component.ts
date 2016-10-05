@@ -3,7 +3,6 @@ import { Page } from 'ui/page';
 import { Color } from 'color';
 
 @Component({
-    selector: "pas-home",
     templateUrl: "pages/home/home.template.html",
 })
 export class HomeComponent implements OnInit {
@@ -13,7 +12,6 @@ export class HomeComponent implements OnInit {
     ) {}
 
     public ngOnInit() {
-        // this._page.actionBarHidden = true;
         this._page.backgroundColor = new Color("#3080c9");
         this._page.backgroundImage = "~/images/sun3.png";
     }

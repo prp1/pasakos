@@ -7,57 +7,6 @@ import { Story } from './stories.interfaces';
 @Injectable()
 export class StoriesService {
 
-    private _categories = [
-        {
-            id: 1,
-            title: 'Nuotykių',
-        },
-        {
-            id: 2,
-            title: 'Baugios',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos1',
-        },
-        {
-            id: 3,
-            title: 'Linksmos2',
-        },
-        {
-            id: 3,
-            title: 'Linksmos3',
-        },
-        {
-            id: 3,
-            title: 'Linksmos4',
-        },
-        {
-            id: 3,
-            title: 'Linksmos5',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-    ]
-
     private _stories: Story[] = [
         {
             id: 1,
@@ -121,10 +70,6 @@ Tuo metu, kai prasideda mūsų pasaka, Mėlynbarzdis atvažiavo pas savo kaimyn�
         });
 
         return stories;
-    }
-
-    public getCategories() {
-        return this._categories;
     }
 
     public isFavorite(storyId): boolean {
