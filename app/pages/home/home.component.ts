@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { Page } from 'ui/page';
 import { Color } from 'color';
 
 @Component({
-    templateUrl: "pages/home/home.template.html",
+    templateUrl: 'pages/home/home.template.html',
 })
 export class HomeComponent implements OnInit {
 
@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
         private _page: Page
     ) {}
 
-    public ngOnInit() {
-        this._page.backgroundColor = new Color("#3080c9");
-        this._page.backgroundImage = "~/images/sun3.png";
+    public ngOnInit(): void {
+        this._page.backgroundColor = new Color('#3080c9');
+        this._page.backgroundImage = '~/images/sun3.png';
     }
 
 }

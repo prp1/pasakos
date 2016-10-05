@@ -1,14 +1,15 @@
 <pas-layout>
     <StackLayout>
 
-        <GridLayout rows="auto" columns="*,*,*,*,*,*,*,*">
+        <GridLayout rows="auto" columns="*,*,*,*,*,*,auto,*">
             <Label [text]="story.title"
                     class="medium-spacing"
                     row="0"
                     col="0"
-                    colSpan="7"
+                    colSpan="6"
                     horizontalAlignment="left">
             </Label>
+            <Label [text]="getInfo()" row="0" col="6" verticalAlignment="center" class="pas-story-info"></Label>
             <Image src="~/images/heart-{{getHeartColor(story.id)}}.png"
                     stretch="none"
                     verticalAlignment="center"

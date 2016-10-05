@@ -113,3 +113,8 @@ Image {
 .song-action-btn {
     margin-top: 8;
 }
+
+.pas-story-info {
+    color: green;
+    font-size: 10;
+}

@@ -31,4 +31,9 @@ export class StoryViewComponent implements OnInit {
         return this._storiesService.isFavorite(storyId) ? 'red' : 'grey';
     }
 
+    public getInfo(): string {
+        return this.story.length + ' žod., '
+            + this.story.time + ' min. ';
+    }
+
 }
