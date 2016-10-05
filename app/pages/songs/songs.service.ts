@@ -1,10 +1,7 @@
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Rx";
-import "rxjs/add/operator/map";
+import { Injectable } from '@angular/core';
 import { TNSPlayer } from 'nativescript-audio';
-
-
 import { Song } from './songs.interfaces';
+import { songs } from '../../data/songs';
 
 @Injectable()
 export class SongsService {
@@ -13,30 +10,12 @@ export class SongsService {
     private _activeSong: Song;
     private _isPlaying: boolean = false;
 
-    private _songs: Song[] = [
-        {
-            id: 1,
-            title: 'Lopšinė 1',
-            fileName: 'song1.mp3'
-        },
-        {
-            id: 2,
-            title: 'Lopšinė 2',
-            fileName: 'song2.mp3'
-        },
-        {
-            id: 3,
-            title: 'Lopšinė 3',
-            fileName: 'song3.mp3'
-        },
-    ];
-
     constructor() {
         this._player = new TNSPlayer();
     }
 
-    public getSongs() {
-        return this._songs;
+    public getSongs(): Song[] {
+        return songs;
     }
 
     public play(song: Song): void {
@@ -57,13 +36,13 @@ export class SongsService {
         this._activeSong = song;
 
         this._player.playFromFile({
-            audioFile: `~/audio/${song.fileName}`
+            audioFile: `~/audio/${song.fileName}`,
         });
     }
 
     public pause(song: Song): void {
         this._player.pause();
-        this._isPlaying = false
+        this._isPlaying = false;
     }
 
     public stop(song: Song): void {
