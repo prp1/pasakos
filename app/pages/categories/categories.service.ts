@@ -1,61 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
+import { categories } from '../../data/categories';
+import { Category } from './categories.interfaces';
 
 @Injectable()
 export class CategoriesService {
 
-    private _categories = [
-        {
-            id: 1,
-            title: 'Nuotykių 987',
-        },
-        {
-            id: 2,
-            title: 'Baugios',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos',
-        },
-        {
-            id: 3,
-            title: 'Linksmos1',
-        },
-        {
-            id: 3,
-            title: 'Linksmos2',
-        },
-        {
-            id: 3,
-            title: 'Linksmos3',
-        },
-        {
-            id: 3,
-            title: 'Linksmos4',
-        },
-        {
-            id: 3,
-            title: 'Linksmos5',
-        },
-        {
-            id: 3,
-            title: 'Linksmos11112',
-        },
-    ];
-
-    public getCategories() {
-        return this._categories;
+    public getCategories(): Category[] {
+        return categories;
     }
-
 }

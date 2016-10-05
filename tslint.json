@@ -13,7 +13,6 @@
         "no-var-requires": false,
         "only-arrow-functions": [true, "allow-declarations"],
         "object-literal-key-quotes": [true, "as-needed"],
-        "ordered-imports": [true, { "import-sources-order": "case-insensitive", "named-imports-order": "case-insensitive" }],
         "typedef": [
             true, 
             "call-signature", 
@@ -141,7 +140,6 @@
             "check-separator",
             "check-type"
         ],
-        "import-destructuring-spacing": true,
         "one-variable-per-declaration": [true, "ignore-for-loop"]
     }
 }
