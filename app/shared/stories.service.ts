@@ -1,53 +1,19 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Rx";
-import "rxjs/add/operator/map";
-
+// import "rxjs/add/operator/map";
+import { stories } from '../data/stories';
 import { Story } from './stories.interfaces';
 
 @Injectable()
 export class StoriesService {
 
-    private _stories: Story[] = [
-        {
-            id: 1,
-            title: 'Erelis',
-            text: ``,
-            categoryId: 1,
-        },
-        {
-            id: 2,
-            title: 'Mėlynbarzdis',
-            text: `
-Kažkada labai toli, puikiuose rūmuose, gyveno turtingas žmogus, vardu Mėlynbarzdis. 
-
-Tokią keistą pavardę jis gavo todėl, kad jo barzda buvo mėlyna. Pažiūrėti jis buvo rūstus ir žiaurus, o mėlyna barzda darė jį tokį baisų, kad niekas nenorėjo už jo tekėti. O Mėlynbarzdis jau šešis sykius buvo vedęs, tiktai niekas nežinojo, kur jo pačios dingsta. 
-
-Tuo metu, kai prasideda mūsų pasaka, Mėlynbarzdis atvažiavo pas savo kaimynę našlę prašyti, kad leistų už jo vieną savo dukrelę — tą, kuri pati panorės už jo eiti. Kai sužinojo gražuolės sesers tas piršlybas, ėmė savitarpy bartis ir siuntinėti jaunikį viena pas kitą. Mėlynbarzdis po to iškėlė puotą, susikvietė į ją kaimynus su dukterimis ir visus nustebino savo turtu: šilkai, deimantai ir šydai visur šlamėjo, krištolinės žvakidės visur skleidė šviesos spindulius, didžiausi veidrodžiai rodė visą žmogų, paveikslai ir marmurinės stovylos puošė sienas.                
-            `,
-            categoryId: 1,
-        },
-        {
-            id: 3,
-            title: 'Du žalčiai',
-            text: 'Du žalčiai text',
-            categoryId: 1,
-        },
-        {
-            id: 4,
-            title: 'Triratukas',
-            text: 'Triratukas text',
-            categoryId: 2,
-        },
+    private _favoriteStoriesIds: number[] = [
+        1,
     ];
 
-    private _favoriteStoriesIds = [
-        1
-    ];
-
-    public getStory(storyId: number) {
+    public getStory(storyId: number): Story {
         let story;
 
-        this._stories.forEach((s) => {
+        stories.forEach((s) => {
             if (s.id === storyId) {
                 story = s;
             }
@@ -56,29 +22,29 @@ Tuo metu, kai prasideda mūsų pasaka, Mėlynbarzdis atvažiavo pas savo kaimyn�
         return story;
     }
 
-    public getStories(categoryId: number) {
+    public getStories(categoryId: number): Story[] {
         if (!categoryId) {
-            return this._stories;
+            return stories;
         }
 
-        let stories = [];
+        let storiesOfCategory = [];
 
-        this._stories.forEach((s) => {
+        stories.forEach((s) => {
             if (s.categoryId === categoryId) {
-                stories.push(s);
+                storiesOfCategory.push(s);
             }
         });
 
-        return stories;
+        return storiesOfCategory;
     }
 
-    public isFavorite(storyId): boolean {
+    public isFavorite(storyId: number): boolean {
         return this._favoriteStoriesIds.indexOf(storyId) > -1;
     }
 
     public toggleFavoriteState(storyId: number): void {
         if (this.isFavorite(storyId)) {
-            var index = this._favoriteStoriesIds.indexOf(storyId);
+            const index = this._favoriteStoriesIds.indexOf(storyId);
             this._favoriteStoriesIds.splice(index, 1);
         } else {
             this._favoriteStoriesIds.push(storyId);

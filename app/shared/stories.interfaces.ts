@@ -3,4 +3,6 @@ export interface Story {
     categoryId: number;
     title: string;
     text: string;
+    length: number;
+    time: number;
 }
