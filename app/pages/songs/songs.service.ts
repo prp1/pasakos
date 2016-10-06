@@ -9,6 +9,7 @@ export class SongsService {
     private _player: TNSPlayer;
     private _activeSong: Song;
     private _isPlaying: boolean = false;
+    private _lastActiveSong: Song;
 
     constructor() {
         this._player = new TNSPlayer();
@@ -20,7 +21,7 @@ export class SongsService {
 
     public play(song: Song): void {
 
-        if (this.isSongPlayed(song)) {
+        if (this.isSongPlaying(song)) {
             return;
         }
 
@@ -34,13 +35,14 @@ export class SongsService {
 
         this._isPlaying = true;
         this._activeSong = song;
+        this._lastActiveSong = song;
 
         this._player.playFromFile({
             audioFile: `~/audio/${song.fileName}`,
         });
     }
 
-    public pause(song: Song): void {
+    public pause(): void {
         this._player.pause();
         this._isPlaying = false;
     }
@@ -55,9 +57,23 @@ export class SongsService {
         return this._activeSong && this._activeSong.id === song.id;
     }
 
-    public isSongPlayed(song: Song): boolean {
+    public isSongPlaying(song: Song): boolean {
         return this._isPlaying
             && this.isSongActive(song);
+    }
+
+    public isPlaying(): boolean {
+        return this._isPlaying;
+    }
+
+    public toggleActiveSong(): void {
+        if (this._isPlaying) {
+            this.pause();
+        } else if (this._lastActiveSong) {
+            this.play(this._lastActiveSong);
+        } else {
+            this.play(songs[0]);
+        }
     }
 
 }

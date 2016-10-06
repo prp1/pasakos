@@ -20,15 +20,15 @@ export class SongsComponent implements OnInit {
     }
 
     public onActionClick(song: Song): void {
-        if (this._songsService.isSongPlayed(song)) {
-            this._songsService.pause(song);
+        if (this._songsService.isSongPlaying(song)) {
+            this._songsService.pause();
         } else {
             this._songsService.play(song);
         }
     }
 
     public getActionImg(song: Song): string {
-        if (this._songsService.isSongPlayed(song)) {
+        if (this._songsService.isSongPlaying(song)) {
             return 'pause';
         }
 
