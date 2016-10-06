@@ -12,6 +12,17 @@ button {
     background-color: #bfdef3;
 }
 
+p {
+    margin-bottom: 5;
+    color: red;
+    text-indent: 10;
+}
+
+HtmlView {
+    padding: 10;
+    margin: 10
+}
+
 .title {
     font-size: 30;
     margin: 20;
