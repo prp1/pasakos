@@ -1,6 +1,5 @@
 <pas-layout>
     <StackLayout>
-
         <GridLayout rows="auto" columns="*,*,*,*,*,*,auto,*" backgroundColor="#beddf2">
             <Label [text]="story.title"
                     class="medium-spacing"
@@ -10,16 +9,10 @@
                     horizontalAlignment="left">
             </Label>
             <Label [text]="getInfo()" row="0" col="6" verticalAlignment="center" class="pas-story-info" marginRight="10"></Label>
-            <Image src="~/images/heart-{{getHeartColor(story.id)}}.png"
-                    stretch="none"
-                    verticalAlignment="center"
-                    row="0"
-                    col="7"
-                    (tap)="onHeartClick(story.id)" >
-            </Image>
+            <StackLayout row="0" col="7" verticalAlignment="center">
+                <pas-favorite [storyId]="story.id"></pas-favorite>
+            </StackLayout>
         </GridLayout>
-
         <HtmlView [html]="story.text"></HtmlView>
-
     </StackLayout>
 </pas-layout>

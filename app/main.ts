@@ -1,16 +1,14 @@
-// this import should be first in order to load some required settings (like globals and reflect-metadata)
-import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
-
-import { NgModule } from "@angular/core";
-
-import { AppComponent } from "./app.component";
-import { BottomBarComponent } from "./components/bottom-bar/bottom-bar.component";
-import { LayoutComponent } from "./components/layout/layout.component";
-import { routes, navigatableComponents } from "./app.routing";
-import { StoriesService } from "./shared/stories.service";
-import { SongsService } from "./pages/songs/songs.service";
-import { CategoriesService } from "./pages/categories/categories.service";
+import { platformNativeScriptDynamic, NativeScriptModule } from 'nativescript-angular/platform';
+import { NativeScriptRouterModule } from 'nativescript-angular/router';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { routes, navigatableComponents } from './app.routing';
+import { StoriesService } from './shared/stories.service';
+import { SongsService } from './pages/songs/songs.service';
+import { CategoriesService } from './pages/categories/categories.service';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -18,6 +16,7 @@ import { CategoriesService } from "./pages/categories/categories.service";
         AppComponent,
         BottomBarComponent,
         LayoutComponent,
+        FavoriteComponent,
         ...navigatableComponents,
     ],
     imports: [
@@ -29,7 +28,7 @@ import { CategoriesService } from "./pages/categories/categories.service";
         CategoriesService,
         StoriesService,
         SongsService,
-    ]
+    ],
 })
 class AppComponentModule {
 

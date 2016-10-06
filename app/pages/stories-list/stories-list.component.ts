@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Page } from 'ui/page';
 import { StoriesService } from '../../shared/stories.service';
 import { Story } from '../../shared/stories.interfaces';
 
@@ -15,8 +14,7 @@ export class StoriesListComponent implements OnInit {
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
-        private _storiesService: StoriesService,
-        private _page: Page
+        private _storiesService: StoriesService
     ) {}
 
     public ngOnInit(): void {
@@ -31,11 +29,4 @@ export class StoriesListComponent implements OnInit {
         this._router.navigate(['/stories', id]);
     }
 
-    public onHeartClick(storyId: number): void {
-        this._storiesService.toggleFavoriteState(storyId);
-    }
-
-    public getHeartColor(storyId: number): string {
-        return this._storiesService.isFavorite(storyId) ? 'red' : 'grey';
-    }
 }

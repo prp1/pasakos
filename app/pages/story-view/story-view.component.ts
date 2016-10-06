@@ -23,14 +23,6 @@ export class StoryViewComponent implements OnInit {
         });
     }
 
-    public onHeartClick(storyId: number): void {
-        this._storiesService.toggleFavoriteState(storyId);
-    }
-
-    public getHeartColor(storyId: number): string {
-        return this._storiesService.isFavorite(storyId) ? 'red' : 'grey';
-    }
-
     public getInfo(): string {
         return this.story.length + ' žod., '
             + this.story.time + ' min. ';
