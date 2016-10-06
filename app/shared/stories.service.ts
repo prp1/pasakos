@@ -19,20 +19,29 @@ export class StoriesService {
         return story;
     }
 
-    public getStories(categoryId: number): Story[] {
+    public getStories(categoryId: number | 'favorite'): Story[] {
         if (!categoryId) {
             return stories;
         }
 
-        let storiesOfCategory = [];
+        let choseStories = [];
+        let rule = (s: Story) => {
+            return s.categoryId === categoryId;
+        };
+
+        if (categoryId === 'favorite') {
+            rule = (s: Story) => {
+                return this._favoriteStoriesIds.indexOf(s.id) > -1;
+            };
+        }
 
         stories.forEach((s) => {
-            if (s.categoryId === categoryId) {
-                storiesOfCategory.push(s);
+            if (rule(s)) {
+                choseStories.push(s);
             }
         });
 
-        return storiesOfCategory;
+        return choseStories;
     }
 
     public isFavorite(storyId: number): boolean {

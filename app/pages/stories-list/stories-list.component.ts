@@ -19,7 +19,12 @@ export class StoriesListComponent implements OnInit {
 
     public ngOnInit(): void {
         this._route.params.forEach((params: Params) => {
-            let categoryId = +params['categoryid'];
+            let categoryId = params['categoryid'];
+
+            if (categoryId !== 'favorite') {
+                categoryId = +categoryId;
+            }
+
             this.stories = this._storiesService.getStories(categoryId);
             this.isLoaded = true;
         });
