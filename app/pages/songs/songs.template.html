@@ -8,7 +8,8 @@
                     class="song-action-btn">
                 </Image>
                 <Label [text]="item.title"
-                        class="medium-spacing">
+                        class="medium-spacing"
+                        (tap)="onActionClick(item)">
                 </Label>
             </StackLayout>
         </template>
